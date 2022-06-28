@@ -80,7 +80,7 @@
   "dependencies": {
     "@koa/cors": "3.1.0",
     "@koa/router": "10.1.1",
-    "@strapi/admin": "../admin",
+    "@strapi/admin": "https://gitpkg.now.sh/Zodinet/strapi/packages/core/admin?8231db244e51fac912e87d2f3abe4765cc089b20",
     "@strapi/database": "4.2.0",
     "@strapi/generate-new": "4.2.0",
     "@strapi/generators": "4.2.0",
