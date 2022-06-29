@@ -86,6 +86,7 @@ const useRoleActions = () => {
 
 const RoleListPage = () => {
   const { formatMessage } = useIntl();
+  const { push } = useHistory();
   useFocusWhenNavigate();
 
   const { sortedRoles, isLoading } = useSortedRoles();
@@ -106,7 +107,7 @@ const RoleListPage = () => {
       <SettingsPageTitle name="Roles" />
       <HeaderLayout
         primaryAction={
-          <Button onClick={handleToggleModalForCreatingRole} startIcon={<Plus />} size="L">
+          <Button onClick={() => push('/settings/roles/new')} startIcon={<Plus />} size="L">
             {formatMessage({
               id: 'Settings.roles.list.button.add',
               defaultMessage: 'Add new role',
@@ -127,7 +128,7 @@ const RoleListPage = () => {
           colCount={colCount}
           rowCount={rowCount}
           footer={
-            <TFooter onClick={handleToggleModalForCreatingRole} icon={<Plus />}>
+            <TFooter onClick={() => push('/settings/roles/new')} icon={<Plus />}>
               {formatMessage({
                 id: 'Settings.roles.list.button.add',
                 defaultMessage: 'Add new role',
