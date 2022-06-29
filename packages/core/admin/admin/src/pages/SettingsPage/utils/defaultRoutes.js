@@ -18,8 +18,13 @@ const defaultRoutes = [
     exact: true,
   },
   {
-    Component: () => {
-      return { default: RolesCreatePage };
+    // Component: () => {
+    //   return { default: RolesCreatePage };
+    // },
+    Component: async () => {
+      const component = await import('../pages/Roles/ProtectedCreatePage');
+
+      return component;
     },
     to: '/settings/roles/new',
     exact: true,

@@ -138,4 +138,21 @@ module.exports = {
       data: permissions.map(sanitizePermission),
     };
   },
+  /**
+   * Create a role
+   */
+   async create(ctx) {
+    const { body } = ctx.request;
+
+    const roleService = getService('role');
+
+    await validateRoleUpdateInput(body);
+
+    const createRole = await roleService.create(body);
+    const sanitizedRole = roleService.sanitizeRole(createRole);
+
+    ctx.body = {
+      data: sanitizedRole,
+    };
+  },
 };
