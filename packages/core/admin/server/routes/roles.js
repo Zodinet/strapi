@@ -64,4 +64,15 @@ module.exports = [
       ],
     },
   },
+  {
+    method: 'POST',
+    path: '/roles',
+    handler: 'role.create',
+    config: {
+      policies: [
+        'admin::isAuthenticatedAdmin',
+        { name: 'admin::hasPermissions', config: { actions: ['admin::roles.create'] } },
+      ],
+    },
+  },
 ];

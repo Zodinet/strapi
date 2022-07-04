@@ -1,7 +1,7 @@
 {
   "name": "@strapi/admin",
   "version": "4.2.0",
-  "description": "Strapi Admin",
+  "description": "Strapi Admin by Zodinet",
   "repository": {
     "type": "git",
     "url": "git://github.com/strapi/strapi.git"
